@@ -1,0 +1,40 @@
+﻿{
+  "CollectionName": "textContents",
+  "MigrationType": "data",
+  "Data": [
+    {
+      "Key": "footers",
+      "Language": "English",
+      "Dictionary": [
+        {
+          "Cname": "aboutUs",
+          "Translated": "<a href=\"/AboutUs\">About Us</a>"
+        },
+        {
+          "Cname": "contactUs",
+          "Translated": "<a href=\"/ContactUs\">Contact Us</a>"
+        },
+        {
+          "Cname": "termsAndConditions",
+          "Translated": "<a href=\"/TermsAndConditions\">Terms & Conditions<\/a>"
+        },
+        {
+          "Cname": "privacyPolicy",
+          "Translated": "<a href=\"/PrivacyPolicy\">Privacy Policy</a>"
+        },
+        {
+          "Cname": "cookiesPolicy",
+          "Translated": "<a href=\"/CookiesPolicy\">Cookies Policy<\/a>"
+        },
+        {
+          "Cname": "faq",
+          "Translated": "<a href=\"/FrequentlyAskedQuestions\">Frequently Asked Questions</a>"
+        },
+        {
+          "Cname": "siteMap",
+          "Translated": "<a href=\"/SiteMap\">Sitemap</a>"
+        }
+      ]
+    }
+  ]
+}

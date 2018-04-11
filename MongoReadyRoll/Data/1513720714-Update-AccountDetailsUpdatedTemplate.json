@@ -1,0 +1,12 @@
+﻿{
+  "CollectionName": "emailTemplates",
+  "MigrationType": "data",
+  "Data": [
+    {
+      "Key": "AccountDetailsUpdated",
+      "SourceEmail": "info@foods.co.uk",
+      "Body": "",
+      "Subject": "Your account details have been updated"
+    }
+  ]
+}

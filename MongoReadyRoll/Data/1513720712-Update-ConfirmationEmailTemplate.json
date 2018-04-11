@@ -1,0 +1,12 @@
+﻿{
+  "CollectionName": "emailTemplates",
+  "MigrationType": "data",
+  "Data": [
+    {
+      "Key": "EmailConfirmation",
+      "SourceEmail": "info@foods.co.uk",
+      "Body": "",
+      "Subject": "Please Confirm your Email Address"
+    }
+  ]
+}

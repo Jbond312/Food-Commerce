@@ -1,0 +1,30 @@
+﻿{
+    "RateLimiting": {
+        "Rules": [
+            {
+                "Endpoint": "/api/Users",
+                "PeriodInSeconds": 30,
+                "Limit": 30
+            },
+            {
+                "Endpoint": "/api/Users/*",
+                "PeriodInSeconds": 30,
+                "Limit": 30
+            },
+            {
+                "Endpoint": "/api/Cooks/*/Registrations/*",
+                "PeriodInSeconds": 30,
+                "Limit": 30
+            },
+            {
+                "Endpoint": "*",
+                "PeriodInSeconds": 60,
+                "Limit": 60
+            }
+        ],
+        "IpWhiteList": [
+            "1",
+            "2"
+        ]
+    }
+}

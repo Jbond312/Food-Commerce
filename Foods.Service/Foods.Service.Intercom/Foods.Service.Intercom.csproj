@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Foods.Service.Intercom</RootNamespace>
+    <AssemblyName>Foods.Service.Intercom</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Audit.Service\Audit.Service.Business\Audit.Service.Business.csproj" />
+    <ProjectReference Include="..\..\Postcodes.Service\Postcodes.Service.Business\Postcodes.Service.Business.csproj" />
+    <ProjectReference Include="..\..\Email.Service\Email.Service.Business\Email.Service.Business.csproj" />
+    <ProjectReference Include="..\Foods.Service.Repository\Foods.Service.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

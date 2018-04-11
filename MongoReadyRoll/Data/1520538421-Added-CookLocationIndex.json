@@ -1,0 +1,10 @@
+﻿{
+  "CollectionName": "cooks",
+  "MigrationType": "index",
+  "Data": {
+    "IndexType": "TwoDSphere",
+    "IndexProperty": "Address.Location",
+    "Unique": false,
+    "Direction": 1
+  }
+}

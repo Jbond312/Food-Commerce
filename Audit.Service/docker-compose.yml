@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  userservice:
+    image: auditservice
+    container_name: auditservice
+    ports:
+     - 5000:80
+    extra_hosts:
+     - mongo:<LOCALIP>
+    build:
+      context: ./Audit.Service.Api
+      dockerfile: Dockerfile
+  mongo:
+    image: mongo:latest
+    container_name: mongousers
+    hostname: mongo
+    ports:
+     - 32770:27017

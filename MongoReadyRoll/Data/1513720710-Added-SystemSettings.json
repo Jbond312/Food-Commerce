@@ -1,0 +1,239 @@
+﻿{
+  "CollectionName": "systemSettings",
+  "MigrationType": "data",
+  "Data": [
+    {
+      "Allergens": [
+        "Wheat & Grains",
+        "Molluscan Shellfish",
+        "Crustacean Shellfish",
+        "Fish",
+        "Wheat",
+        "Rye",
+        "Barley",
+        "Gluten",
+        "Eggs",
+        "Milk",
+        "Dairy",
+        "Sesame",
+        "Tree Nuts",
+        "Peanuts",
+        "Nuts",
+        "Soy",
+        "Celery",
+        "Mustard",
+        "Sulphur Dioxide & Sulfites",
+        "Lupin",
+        "No Allergens"
+      ],
+      "DietaryPreferences": [
+        {
+          "Name": "Vegetarian",
+          "ContradictiveAllergen": [
+            "Fish",
+            "Crustacean Shellfish",
+            "Molluscan Shellfish"
+          ]
+        },
+        {
+          "Name": "Vegan",
+          "ContradictiveAllergen": [
+            "Eggs",
+            "Milk",
+            "Fish",
+            "Crustacean Shellfish",
+            "Molluscan Shellfish"
+          ]
+        },
+        {
+          "Name": "Organic",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Raw Food",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Gluten Free",
+          "ContradictiveAllergen": [
+            "Wheat",
+            "Rye",
+            "Barley",
+            "Gluten"
+          ]
+        },
+        {
+          "Name": "Dairy Free",
+          "ContradictiveAllergen": [
+            "Milk"
+          ]
+        },
+        {
+          "Name": "Lactose",
+          "ContradictiveAllergen": [
+            "Milk"
+          ]
+        },
+        {
+          "Name": "Sugar",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Low fat",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Halal",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Kosher",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Local Ingredients",
+          "ContradictiveAllergen": []
+        },
+        {
+          "Name": "Nut Free",
+          "ContradictiveAllergen": [
+            "Peanuts",
+            "Tree Nuts"
+          ]
+        },
+        {
+          "Name": "Soy Free",
+          "ContradictiveAllergen": [
+            "Soy"
+          ]
+        },
+        {
+          "Name": "Fish Free",
+          "ContradictiveAllergen": [
+            "Fish",
+            "Crustacean Shellfish",
+            "Molluscan Shellfish"
+          ]
+        }
+      ],
+      "CookCategories": [
+        "Afghan",
+        "African",
+        "Algerian",
+        "American",
+        "Antillean",
+        "Argentinian",
+        "Armenian",
+        "Asian",
+        "Austrian",
+        "Bakery",
+        "Bangladeshi",
+        "Basque",
+        "BBQ",
+        "Belgian",
+        "Bistro",
+        "Brazilian",
+        "Breakfast",
+        "British",
+        "Brunch",
+        "Burgers",
+        "Burritos",
+        "Cakes",
+        "Cantonese",
+        "Caribbean",
+        "Cheese",
+        "Chicken",
+        "Chinese",
+        "Chocolates",
+        "Crepes",
+        "Cuban",
+        "Curry",
+        "Deseert",
+        "Desserts",
+        "Dim Sum",
+        "Donuts",
+        "East European",
+        "English",
+        "Falafel",
+        "Fish & Chips",
+        "French",
+        "Georgian",
+        "German",
+        "Greek",
+        "Grill",
+        "Halal",
+        "Hawaiian",
+        "Hot Dog",
+        "Hummus",
+        "Hungarian",
+        "Ice Cream",
+        "Indian",
+        "Iranian",
+        "Israeli",
+        "Italian",
+        "Jamaican",
+        "Japanese",
+        "Juices",
+        "Kebab",
+        "Korean",
+        "Korena",
+        "Lebanese",
+        "Lunch",
+        "Malaysian",
+        "Mediterranean",
+        "Mexican",
+        "Mezze",
+        "Middle Eastern",
+        "Milkshakes",
+        "Moroccan",
+        "Nepalese",
+        "Noodles",
+        "Oriental",
+        "Pakistani",
+        "Pan Asian",
+        "Pasta",
+        "Peri Peri",
+        "Peruvian",
+        "Pho",
+        "Pies",
+        "Pizza",
+        "Polish",
+        "Portuguese",
+        "Ramen",
+        "Rotisserie",
+        "Russian",
+        "Salads",
+        "Sandwiches",
+        "Satay",
+        "Scandinavian",
+        "Seafood",
+        "Serbian",
+        "Shawarma",
+        "Sichuan",
+        "Sicilian",
+        "Soup",
+        "South American",
+        "Souvlaki",
+        "Spanish",
+        "Sri Lankan",
+        "Steak",
+        "Stir Fry",
+        "Street Food",
+        "Sushi",
+        "Sweet Treats",
+        "Swiss",
+        "Syrian",
+        "Tacos",
+        "Tapas",
+        "Tea",
+        "Thai",
+        "Tunisian",
+        "Turkish",
+        "Vietnamese",
+        "West African",
+        "Wings",
+        "Wraps"
+      ]
+    }
+  ]
+}

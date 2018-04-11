@@ -1,0 +1,68 @@
+﻿{
+  "CollectionName": "textContents",
+  "MigrationType": "data",
+  "Data": [
+    {
+      "Key": "homepage",
+      "Language": "English",
+      "Dictionary": [
+        {
+          "Cname": "login",
+          "Translated": "Login"
+        },
+        {
+          "Cname": "register",
+          "Translated": "Register"
+        },
+        {
+          "Cname": "aboutFoodsBody",
+          "Translated": ""
+        },
+        {
+          "Cname": "becomeacook",
+          "Translated": "Become a cook"
+        },
+        {
+          "Cname": "becomeacookBody",
+          "Translated": ""
+        },
+        {
+          "Cname": "help",
+          "Translated": "Help"
+        },
+        {
+          "Cname": "language",
+          "Translated": "Language"
+        },
+        {
+          "Cname": "enterPostcode",
+          "Translated": "Enter your postcode"
+        },
+        {
+          "Cname": "slogan",
+          "Translated": ""
+        },
+        {
+          "Cname": "cookiesPolicyNotice",
+          "Translated": ""
+        },
+        {
+          "Cname": "aboutFoods",
+          "Translated": "About Foods"
+        },
+        {
+          "Cname": "discoverFoods",
+          "Translated": "Discover Foods"
+        },
+        {
+          "Cname": "legal",
+          "Translated": "Legal"
+        },
+        {
+          "Cname": "help",
+          "Translated": "Help"
+        }
+      ]
+    }
+  ]
+}

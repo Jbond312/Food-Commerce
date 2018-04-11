@@ -1,0 +1,9 @@
+﻿{
+  "CollectionName": "emailTemplates",
+  "MigrationType": "index",
+  "Data": {
+    "IndexType": "SingleField", 
+    "IndexProperty": "Key_Index_Unique",
+    "Operation": "drop"
+  }
+}

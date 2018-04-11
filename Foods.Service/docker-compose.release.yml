@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  foodsservice:
+    image: foodsservice:${BRANCHNAME}
+    container_name: foodsservice
+    ports:
+     - 8080:80
+    extra_hosts:
+     - mongo:${LINODEIP}
+     - mysql:${LINODEIP}
+    depends_on:
+     - "mongo"
+     - "mysql"
+  mongoreadyroll:
+    image: mongoreadyroll:${BRANCHNAME}
+    container_name: mongoreadyroll
+    extra_hosts:
+     - mongo:${LINODEIP}
+    depends_on:
+     - "mongo"
+  mongo:
+    image: mongo:latest
+    container_name: mongofoods
+    hostname: mongo
+    volumes:
+    - /api/services/foods.service/mongo/db:/data/db
+    - /api/services/foods.service/mongo/configdb:/data/configdb
+    ports:
+     - 32770:27017
+  mysql:
+    image: mysql:latest
+    container_name: mysqlfoods
+    hostname: mysql
+    volumes:
+    - /api/services/foods.service/mysql/db:/var/lib/mysql
+    ports:
+     - 32771:3306
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=foodsidentity
+    - MYSQL_USER=developer
+    - MYSQL_PASSWORD=root

@@ -1,0 +1,33 @@
+﻿{
+  "MigrationLogSettings": {
+    "DatabaseName": "foods",
+    "ConnectionString": "mongodb://mongo:32770",
+    "CollectionName": "_migrationLog" 
+  },
+  "Settings": [
+    {
+      "DatabaseName": "foods",
+      "ConnectionString": "mongodb://mongo:32770",
+      "CollectionName": "emailTemplates",
+      "Identifier": "Key"
+    },
+    {
+      "DatabaseName": "foods",
+      "ConnectionString": "mongodb://mongo:32770",
+      "CollectionName": "systemSettings",
+      "Identifier": "Id"
+    },
+    {
+      "DatabaseName": "foods",
+      "ConnectionString": "mongodb://mongo:32770",
+      "CollectionName": "textContents",
+      "Identifier": "Key"
+    },
+    {
+      "DatabaseName": "foods",
+      "ConnectionString": "mongodb://mongo:32770",
+      "CollectionName": "cooks",
+      "Identifier": "Key"
+    }
+  ]
+}

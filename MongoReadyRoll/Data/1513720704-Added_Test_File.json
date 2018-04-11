@@ -1,0 +1,12 @@
+{
+  "CollectionName": "emailTemplates",
+  "MigrationType": "data",
+  "Data": [
+    {
+      "Key": "FoodBusinessRegistration",
+      "SourceEmail": "info@foods.co.uk",
+      "Body": "Random body for {{FirstName}} and {{LastName}}",
+      "Subject": "Food Business Registration Form"
+    }
+  ]
+}

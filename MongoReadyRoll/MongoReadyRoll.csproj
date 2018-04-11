@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DatabaseSettings.json" />
+    <None Remove="Data\1513720704-Added_Test_File.json" />
+    <None Remove="Data\1513720705-Index_Test.json" />
+    <None Remove="Data\1513720706-Test_Drop.json" />
+    <None Remove="Data\1513720707-Added_ConfirmationEmailTemplate.json" />
+    <None Remove="Data\1513720708-Added_ResetPasswordTemplate.json" />
+    <None Remove="Data\1513720709-Added-AccountDetailsUpdatedTemplate.json" />
+    <None Remove="Data\1513720711-Update_FoodBusinessRegistrationTemplate.json" />
+    <None Remove="Data\1513720712-Update-ConfirmationEmailTemplate.json" />
+    <None Remove="Data\1513720713-Update-ResetPasswordTemplate.json" />
+    <None Remove="Data\1513720714-Update-AccountDetailsUpdatedTemplate.json" />
+    <None Remove="Data\1520538421-Added-CookLocationIndex.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DatabaseSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720704-Added_Test_File.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720705-Index_Test.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720706-Test_Drop.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720707-Added_ConfirmationEmailTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720708-Added_ResetPasswordTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720709-Added-AccountDetailsUpdatedTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720710-Added-SystemSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720711-Added-HomepageTextContent.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720711-Update_FoodBusinessRegistrationTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720712-Update-ConfirmationEmailTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720713-Update-ResetPasswordTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1513720714-Update-AccountDetailsUpdatedTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\1520538421-Added-CookLocationIndex.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>
