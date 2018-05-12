@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
@@ -106,6 +107,19 @@ namespace Foods.Service.Api
 
             services.AddSwaggerGen(x =>
             {
+                x.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    In = "header",
+                    Description = "Please insert JWT with Bearer.",
+                    Name = "Authorization",
+                    Type = "apiKey"
+                });
+
+                x.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    { "Bearer", new string[] { } }
+                });
+
                 x.SwaggerDoc("v1.0", new Info
                 {
                     Title = "Foods Service",
@@ -131,7 +145,6 @@ namespace Foods.Service.Api
                     return actionApiVersionModel.ImplementedApiVersions.Any(v => $"v{v.ToString()}" == docName);
                 });
                 x.OperationFilter<ApiVersionOperationFilter>();
-                x.OperationFilter<AuthHeaderParameter>();
                 x.DescribeAllEnumsAsStrings();
             });
 
