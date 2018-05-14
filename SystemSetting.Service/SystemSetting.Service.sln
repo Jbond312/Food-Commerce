@@ -5,9 +5,13 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemSetting.Service.Api", "SystemSetting.Service.Api\SystemSetting.Service.Api.csproj", "{C65BF061-25FD-4AA3-AE8C-2EE2C5834AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSetting.Service.Business", "SystemSetting.Service.Business\SystemSetting.Service.Business.csproj", "{AAADDC72-E715-4A34-8506-46836B428302}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemSetting.Service.Business", "SystemSetting.Service.Business\SystemSetting.Service.Business.csproj", "{AAADDC72-E715-4A34-8506-46836B428302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSetting.Service.Tests", "SystemSetting.Service.Tests\SystemSetting.Service.Tests.csproj", "{A165CCC2-0804-4E6C-932D-BD06CD972D4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemSetting.Service.Tests", "SystemSetting.Service.Tests\SystemSetting.Service.Tests.csproj", "{A165CCC2-0804-4E6C-932D-BD06CD972D4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\Common\Common.csproj", "{94B6C415-9C2F-4C08-87F7-E42863A0D174}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foods.Service.Repository", "..\Foods.Service\Foods.Service.Repository\Foods.Service.Repository.csproj", "{F2E47247-2B69-461E-9E71-10DCB1983EEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{A165CCC2-0804-4E6C-932D-BD06CD972D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A165CCC2-0804-4E6C-932D-BD06CD972D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A165CCC2-0804-4E6C-932D-BD06CD972D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B6C415-9C2F-4C08-87F7-E42863A0D174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B6C415-9C2F-4C08-87F7-E42863A0D174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B6C415-9C2F-4C08-87F7-E42863A0D174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B6C415-9C2F-4C08-87F7-E42863A0D174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,7 @@ namespace Foods.Service.Api.Controllers
     [Route("api/[controller]")]
     [ApiVersion("1.0")]
     [Produces("application/json")]
-    [Authorize]
+    //[Authorize]
     public class SystemSettingsController : BaseController
     {
         private readonly IMapper _mapper;

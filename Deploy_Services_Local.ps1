@@ -14,6 +14,22 @@ dotnet build
 dotnet publish . -c Release -o ./obj/Docker/publish
 
 cd ..
+
+cd SystemSetting.Service
+
+$host.ui.RawUI.ForegroundColor = "Green"
+
+echo "SystemSetting.Service..."
+echo "Building SystemSetting.Service..."
+echo ""
+echo ""
+$host.ui.RawUI.ForegroundColor = $t
+
+dotnet restore
+dotnet build
+dotnet publish . -c Release -o ./obj/Docker/publish
+
+cd ..
 cd Foods.Service
 
 $host.ui.RawUI.ForegroundColor = "Green"

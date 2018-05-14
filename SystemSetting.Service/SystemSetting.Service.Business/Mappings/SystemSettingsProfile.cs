@@ -9,6 +9,7 @@ namespace SystemSetting.Service.Business.Mappings
         public SystemSettingsProfile()
         {
             CreateMap<SystemSettings, SystemSettingsDto>().ReverseMap();
+            CreateMap<DietaryPreference, DietaryPreferenceDto>().ReverseMap();
         }
     }
 }

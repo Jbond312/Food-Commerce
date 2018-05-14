@@ -7,8 +7,8 @@ services:
     ports:
      - 8080:80
     extra_hosts:
-     - mongo:10.24.66.43
-     - mysql:10.24.66.43
+     - mongo:10.203.18.20
+     - mysql:10.203.18.20
     build:
       context: ./Foods.Service.Api
       dockerfile: Dockerfile
@@ -19,7 +19,7 @@ services:
     image: mongoreadyroll
     container_name: mongoreadyroll
     extra_hosts:
-     - mongo:10.24.66.43
+     - mongo:10.203.18.20
     build:
       context: ../MongoReadyRoll
       dockerfile: Dockerfile
@@ -42,3 +42,15 @@ services:
     - MYSQL_DATABASE=foodsidentity
     - MYSQL_USER=developer
     - MYSQL_PASSWORD=root
+  systemsettingsservice:
+    image: systemsettingsservice
+    container_name: systemsettingsservice
+    ports:
+     - 32772:80
+    extra_hosts:
+     - mongo:10.203.18.20
+    build:
+      context: ../SystemSetting.Service/SystemSetting.Service.Api
+      dockerfile: Dockerfile
+    depends_on:
+     - "mongo"

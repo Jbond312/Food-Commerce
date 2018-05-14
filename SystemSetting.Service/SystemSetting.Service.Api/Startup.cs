@@ -1,8 +1,11 @@
 ﻿using System.IO;
 using System.Linq;
 using SystemSetting.Service.Api.SwaggerHelpers;
+using SystemSetting.Service.Business;
 using AutoMapper;
+using Common.Repository;
 using FluentValidation.AspNetCore;
+using Foods.Service.Repository.SystemSetting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -68,6 +71,13 @@ namespace SystemSetting.Service.Api
             Configuration = builder.Build();
 
             services.AddAutoMapper();
+
+            var serviceConfigurator = new SystemSettingServiceConfiguration();
+
+            var mongoConnectionString = Configuration["MongoDatabase:ConnectionString"];
+            var mongodatabaseName = Configuration["MongoDatabase:DatabaseName"];
+
+            serviceConfigurator.ConfigureServices(services, mongoConnectionString, mongodatabaseName);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
