@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using SystemSetting.Service.Business;
 using Audit.Service.Business;
 using Common.Services;
 using Common.Validation;
@@ -40,7 +39,6 @@ namespace Foods.Service.Api
             new AuditServiceConfiguration(),
             new CookEntryServiceConfiguration(),
             new EmailServiceConfiguration(),
-            new SystemSettingServiceConfiguration(),
             new TextContentServiceConfiguration(),
             new PostcodesServiceConfiguration()
         };

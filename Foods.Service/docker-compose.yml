@@ -26,13 +26,13 @@ services:
     depends_on:
      - "mongo"
   mongo:
-    image: mongo:latest
+    image: mongo:3.6.4
     container_name: mongofoods
     hostname: mongo
     ports:
      - 32770:27017
   mysql:
-    image: mysql:latest
+    image: mysql:5.7
     container_name: mysqlfoods
     hostname: mysql
     ports:
@@ -47,6 +47,18 @@ services:
     container_name: systemsettingsservice
     ports:
      - 32772:80
+    extra_hosts:
+     - mongo:10.203.18.20
+    build:
+      context: ../SystemSetting.Service/SystemSetting.Service.Api
+      dockerfile: Dockerfile
+    depends_on:
+     - "mongo"
+  systemsettingsservice2:
+    image: systemsettingsservice
+    container_name: systemsettingsservice2
+    ports:
+     - 32773:80
     extra_hosts:
      - mongo:10.203.18.20
     build:
