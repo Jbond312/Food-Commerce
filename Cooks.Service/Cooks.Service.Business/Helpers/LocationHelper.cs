@@ -2,25 +2,24 @@
 using System.Threading.Tasks;
 using Common.Exceptions;
 using Common.Repository;
-using Foods.Service.Intercom.Postcode;
 using Foods.Service.Repository.Cooks;
 using Foods.Service.Repository.Cooks.FoodBusiness;
 using MongoDB.Driver;
 using MongoDB.Driver.GeoJsonObjectModel;
+using Postcodes.Service.Business.Helper;
 
 namespace Cooks.Service.Business.Helpers
 {
     public class LocationHelper : ILocationHelper
     {
-        private readonly IPostcodeIntercom _postcodeIntercom;
+
         private readonly IRepository<Cook> _cookRepository;
 
         public LocationHelper(
-            IPostcodeIntercom postcodeIntercom,
+
             IRepository<Cook> cookRepository
             )
         {
-            _postcodeIntercom = postcodeIntercom;
             _cookRepository = cookRepository;
         }
 
@@ -38,7 +37,8 @@ namespace Cooks.Service.Business.Helpers
 
         public async Task<Location> GetPostcodeLocation(string postcode)
         {
-            var location = await _postcodeIntercom.GetLocation(postcode);
+            var postcodeclient = new PostcodesClient();
+            var location = await postcodeclient.GetPostcode(postcode);
 
             if (!location.IsValid)
             {
@@ -50,8 +50,8 @@ namespace Cooks.Service.Business.Helpers
                 Type = "Point",
                 Coordinates = new List<double>
                 {
-                    location.Longitude,
-                    location.Latitude
+                    location.Result.Longitude,
+                    location.Result.Latitude
                 }
             };
         }

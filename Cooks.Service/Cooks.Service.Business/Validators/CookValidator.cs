@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using SystemSetting.Library.Api;
 using Common.Repository;
 using Common.Validation;
 using Cooks.Service.Business.Entities;
 using Cooks.Service.Business.Entities.FoodBusiness;
 using FluentValidation;
-using Foods.Service.Intercom.SystemSetting;
 using Foods.Service.Repository.Cooks;
 using MongoDB.Driver;
 
@@ -17,12 +17,12 @@ namespace Cooks.Service.Business.Validators
     public class CookValidator : EntityValidator<CookDto>
     {
         private readonly IRepository<Cook> _cookRepo;
-        private readonly ISystemSettingIntercom _systemSettingIntercom;
+        private readonly ISystemSettingsApi _systemSettingIntercom;
         private readonly IEntityValidator<AddressDto> _addressValidator;
 
         public CookValidator(
             IRepository<Cook> cookRepo,
-            ISystemSettingIntercom systemSettingIntercom,
+            ISystemSettingsApi systemSettingIntercom,
             IEntityValidator<AddressDto> addressValidator
             )
         {
@@ -55,8 +55,7 @@ namespace Cooks.Service.Business.Validators
 
         private async Task<bool> BeValidCategories(ICollection<string> categories, CancellationToken token)
         {
-            var systemSettings = await _systemSettingIntercom.GetAllSystemSettings();
-
+            var systemSettings = (_systemSettingIntercom.ApiSystemSettingsGet()).FirstOrDefault();
             if (categories == null)
             {
                 return true;

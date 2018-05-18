@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\Common\Common.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foods.Service.Repository", "..\Foods.Service\Foods.Service.Repository\Foods.Service.Repository.csproj", "{F2E47247-2B69-461E-9E71-10DCB1983EEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSetting.Library", "SystemSetting.Library\SystemSetting.Library.csproj", "{4D9321CA-80BF-44B2-AE95-A9A6F8C40D73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2E47247-2B69-461E-9E71-10DCB1983EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9321CA-80BF-44B2-AE95-A9A6F8C40D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9321CA-80BF-44B2-AE95-A9A6F8C40D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9321CA-80BF-44B2-AE95-A9A6F8C40D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9321CA-80BF-44B2-AE95-A9A6F8C40D73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

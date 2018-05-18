@@ -10,6 +10,7 @@ using Foods.Service.Repository.SystemSetting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace SystemSetting.Service.Api.Controllers
 {
@@ -31,6 +32,7 @@ namespace SystemSetting.Service.Api.Controllers
         }
 
         [HttpGet]
+        [SwaggerResponse(200, typeof(IEnumerable<SystemSettingsDto>))]
         [Route("")]
         public async Task<IActionResult> Get()
         {

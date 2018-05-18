@@ -66,3 +66,15 @@ services:
       dockerfile: Dockerfile
     depends_on:
      - "mongo"
+  cooksservice:
+    image: cooksservice
+    container_name: cooksservice
+    ports:
+     - 32775:80
+    extra_hosts:
+     - mongo:10.203.18.20
+    build:
+      context: ../Cooks.Service/Cooks.Service.Api
+      dockerfile: Dockerfile
+    depends_on:
+     - "mongo"

@@ -15,7 +15,6 @@ using Foods.Service.Intercom.Email;
 using Foods.Service.Intercom.Postcode;
 using Foods.Service.Intercom.SystemSetting;
 using Postcodes.Service.Business;
-using TextContent.Service.Business;
 
 namespace Foods.Service.Api
 {
@@ -39,7 +38,6 @@ namespace Foods.Service.Api
             new AuditServiceConfiguration(),
             new CookEntryServiceConfiguration(),
             new EmailServiceConfiguration(),
-            new TextContentServiceConfiguration(),
             new PostcodesServiceConfiguration()
         };
 

@@ -29,8 +29,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dishes.Service.Tests", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Email.Service.Business", "..\Email.Service\Email.Service.Business\Email.Service.Business.csproj", "{AEF82A69-4845-4A3C-BEB2-99EB21185C1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextContent.Service.Business", "..\TextContent.Service\TextContent.Service.Business\TextContent.Service.Business.csproj", "{ACA90BA6-AFAF-4A1C-A537-4E4B163D6106}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postcodes.Service.Business", "..\Postcodes.Service\Postcodes.Service.Business\Postcodes.Service.Business.csproj", "{9D54E1DF-175D-4BE1-B31E-833EB3EFD861}"
 EndProject
 Global
@@ -91,10 +89,6 @@ Global
 		{AEF82A69-4845-4A3C-BEB2-99EB21185C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEF82A69-4845-4A3C-BEB2-99EB21185C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEF82A69-4845-4A3C-BEB2-99EB21185C1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACA90BA6-AFAF-4A1C-A537-4E4B163D6106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACA90BA6-AFAF-4A1C-A537-4E4B163D6106}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACA90BA6-AFAF-4A1C-A537-4E4B163D6106}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACA90BA6-AFAF-4A1C-A537-4E4B163D6106}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D54E1DF-175D-4BE1-B31E-833EB3EFD861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D54E1DF-175D-4BE1-B31E-833EB3EFD861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D54E1DF-175D-4BE1-B31E-833EB3EFD861}.Release|Any CPU.ActiveCfg = Release|Any CPU

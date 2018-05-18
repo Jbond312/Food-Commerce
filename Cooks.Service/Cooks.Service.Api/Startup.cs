@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using Cooks.Service.Api.SwaggerHelpers;
+using Cooks.Service.Business;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Postcodes.Service.Business;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Cooks.Service.Api
@@ -86,6 +88,16 @@ namespace Cooks.Service.Api
             Configuration = builder.Build();
 
             services.AddAutoMapper();
+
+            var serviceConfigurator = new CookServiceConfiguration();
+
+            var mongoConnectionString = Configuration["MongoDatabase:ConnectionString"];
+            var mongodatabaseName = Configuration["MongoDatabase:DatabaseName"];
+
+            serviceConfigurator.ConfigureServices(services, mongoConnectionString, mongodatabaseName);
+
+            var postcodeServiceConfigurator = new PostcodesServiceConfiguration();
+            postcodeServiceConfigurator.ConfigureServices(services,"","");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -95,6 +107,14 @@ namespace Cooks.Service.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x =>
+                {
+                    //Order is important as it determines which API version is show first on the swagger page
+                    x.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Cooks Service v1.0");
+                }
+            );
 
             app.UseMvc();
         }

@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cooks.Service.Tests", "Cook
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foods.Service.Repository", "..\Foods.Service\Foods.Service.Repository\Foods.Service.Repository.csproj", "{3B26CBFD-7418-4436-9FD5-48740320B8B6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postcodes.Service.Business", "..\Postcodes.Service\Postcodes.Service.Business\Postcodes.Service.Business.csproj", "{41ED5246-107F-458E-AB76-9C6A1DE87F19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemSetting.Library", "..\SystemSetting.Service\SystemSetting.Library\SystemSetting.Library.csproj", "{32E86E55-BF9E-4BD7-8DF5-157A72FD74AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{3B26CBFD-7418-4436-9FD5-48740320B8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B26CBFD-7418-4436-9FD5-48740320B8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B26CBFD-7418-4436-9FD5-48740320B8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41ED5246-107F-458E-AB76-9C6A1DE87F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41ED5246-107F-458E-AB76-9C6A1DE87F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41ED5246-107F-458E-AB76-9C6A1DE87F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41ED5246-107F-458E-AB76-9C6A1DE87F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E86E55-BF9E-4BD7-8DF5-157A72FD74AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E86E55-BF9E-4BD7-8DF5-157A72FD74AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E86E55-BF9E-4BD7-8DF5-157A72FD74AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E86E55-BF9E-4BD7-8DF5-157A72FD74AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
