@@ -54,15 +54,15 @@ services:
       dockerfile: Dockerfile
     depends_on:
      - "mongo"
-  systemsettingsservice2:
-    image: systemsettingsservice
-    container_name: systemsettingsservice2
+  textcontentservice:
+    image: textcontentservice
+    container_name: textcontentservice
     ports:
-     - 32773:80
+     - 32774:80
     extra_hosts:
      - mongo:10.203.18.20
     build:
-      context: ../SystemSetting.Service/SystemSetting.Service.Api
+      context: ../TextContent.Service/TextContent.Service.Api
       dockerfile: Dockerfile
     depends_on:
      - "mongo"
