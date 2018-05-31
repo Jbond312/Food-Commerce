@@ -7,21 +7,21 @@ using Common.Repository;
 using Common.Validation;
 using Dishes.Service.Business.Entities;
 using FluentValidation;
-using Foods.Service.Intercom.SystemSetting;
 using Foods.Service.Repository.Dishes;
 using MongoDB.Driver;
+using SystemSetting.Library.Api;
 
 namespace Dishes.Service.Business.Validators
 {
     public class CookEntryValidator : EntityValidator<CookEntryDto>
     {
         private readonly IRepository<CookEntry> _repo;
-        private readonly ISystemSettingIntercom _systemSettingIntercom;
+        private readonly SystemSettingsApi _systemSettingIntercom;
 
-        public CookEntryValidator(IRepository<CookEntry> repo, ISystemSettingIntercom systemSettingIntercom)
+        public CookEntryValidator(IRepository<CookEntry> repo)
         {
             _repo = repo;
-            _systemSettingIntercom = systemSettingIntercom;
+            _systemSettingIntercom = new SystemSettingsApi();
 
             CascadeMode = CascadeMode.StopOnFirstFailure;
 
@@ -56,7 +56,7 @@ namespace Dishes.Service.Business.Validators
         {
             if (!cookEntry.Allergens.Any() && !cookEntry.DietaryPreferences.Any()) return true;
 
-            var systemSettings = await _systemSettingIntercom.GetAllSystemSettings();
+            var systemSettings = _systemSettingIntercom.ApiSystemSettingsGet().FirstOrDefault();
 
             foreach (var dietPref in cookEntry.DietaryPreferences)
             {
@@ -77,7 +77,7 @@ namespace Dishes.Service.Business.Validators
                 return true;
             }
 
-            var systemSettings = await _systemSettingIntercom.GetAllSystemSettings();
+            var systemSettings = _systemSettingIntercom.ApiSystemSettingsGet().FirstOrDefault();
 
             return AllSettingsAreValid(entry.Allergens.ToList(), systemSettings?.Allergens?.ToList());
         }
@@ -88,7 +88,7 @@ namespace Dishes.Service.Business.Validators
             {
                 return true;
             }
-            var systemSettings = await _systemSettingIntercom.GetAllSystemSettings();
+            var systemSettings = _systemSettingIntercom.ApiSystemSettingsGet().FirstOrDefault();
 
             return AllSettingsAreValid(entry.DietaryPreferences.ToList(), systemSettings?.DietaryPreferences?.Select(x => x.Name).ToList());
         }

@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Audit.Service.Business;
+using Common.Repository;
 using Common.Services;
 using Common.Validation;
 using Microsoft.Extensions.DependencyInjection;
 using Users.Service.Business;
-using Cooks.Service.Business;
-using Dishes.Service.Business;
 using Foods.Service.Api.Jwt.Helpers;
 using Email.Service.Business;
 using Foods.Service.Api.Jwt.Entities;
@@ -14,6 +14,10 @@ using Foods.Service.Intercom.Audit;
 using Foods.Service.Intercom.Email;
 using Foods.Service.Intercom.Postcode;
 using Foods.Service.Intercom.SystemSetting;
+using Foods.Service.Repository.Audit;
+using Foods.Service.Repository.Cooks;
+using Foods.Service.Repository.Users;
+using Foods.Service.Repository.Users.Entities;
 using Postcodes.Service.Business;
 
 namespace Foods.Service.Api
@@ -34,9 +38,7 @@ namespace Foods.Service.Api
         private static IEnumerable<IServiceConfiguration> Services => new List<IServiceConfiguration>
         {
             new UserServiceConfiguration(),
-            new CookServiceConfiguration(),
             new AuditServiceConfiguration(),
-            new CookEntryServiceConfiguration(),
             new EmailServiceConfiguration(),
             new PostcodesServiceConfiguration()
         };
@@ -52,12 +54,16 @@ namespace Foods.Service.Api
             _services.AddSingleton<IJwtHelper, JwtHelper>();
             _services.AddSingleton<IEntityValidator<RegisterDto>, RegisterValidator>();
             _services.AddSingleton<IEntityValidator<LoginDto>, LoginValidator>();
+            
+            _services.AddSingleton<IUserRepository<User>>(s => new UserRepository(_connectionString, _databaseName, "users"));
+            _services.AddSingleton<IRepository<Cook>>(s => new Repository<Cook>(_connectionString, _databaseName, "cooks"));
 
             //Must be transient as constructor takes in UserManager<FoodsIdentityUser>
             _services.AddTransient<IAccountHelper, AccountHelper>();
             _services.AddSingleton<IEmailIntercom, EmailIntercom>();
             _services.AddSingleton<ISystemSettingIntercom, SystemSettingIntercom>();
             _services.AddSingleton<IPostcodeIntercom, PostcodeIntercom>();
+
         }
     }
 }

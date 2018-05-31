@@ -11,8 +11,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\Foods.Service\Foods.Service.Intercom\Foods.Service.Intercom.csproj" />
     <ProjectReference Include="..\..\Foods.Service\Foods.Service.Repository\Foods.Service.Repository.csproj" />
+    <ProjectReference Include="..\..\SystemSetting.Service\SystemSetting.Library\SystemSetting.Library.csproj" />
   </ItemGroup>
 
 </Project>

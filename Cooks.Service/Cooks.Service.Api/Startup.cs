@@ -3,6 +3,7 @@ using System.Linq;
 using AutoMapper;
 using Cooks.Service.Api.SwaggerHelpers;
 using Cooks.Service.Business;
+using Dishes.Service.Business;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -98,6 +99,9 @@ namespace Cooks.Service.Api
 
             var postcodeServiceConfigurator = new PostcodesServiceConfiguration();
             postcodeServiceConfigurator.ConfigureServices(services,"","");
+
+            var dishServiceConfigurator = new CookEntryServiceConfiguration();
+            dishServiceConfigurator.ConfigureServices(services,"","");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

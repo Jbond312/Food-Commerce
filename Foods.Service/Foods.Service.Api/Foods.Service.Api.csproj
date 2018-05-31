@@ -29,8 +29,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Audit.Service\Audit.Service.Business\Audit.Service.Business.csproj" />
-    <ProjectReference Include="..\..\Cooks.Service\Cooks.Service.Business\Cooks.Service.Business.csproj" />
-    <ProjectReference Include="..\..\Dishes.Service\Dishes.Service.Business\Dishes.Service.Business.csproj" />
     <ProjectReference Include="..\..\Email.Service\Email.Service.Business\Email.Service.Business.csproj" />
     <ProjectReference Include="..\..\Users.Service\Users.Service.Business\Users.Service.Business.csproj" />
     <ProjectReference Include="..\Foods.Service.Intercom\Foods.Service.Intercom.csproj" />

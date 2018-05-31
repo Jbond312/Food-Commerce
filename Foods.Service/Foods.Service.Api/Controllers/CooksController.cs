@@ -4,10 +4,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Common.Repository;
 using Common.Validation;
-using Cooks.Service.Business.Entities;
-using Cooks.Service.Business.Helpers;
-using Cooks.Service.Business.Validators;
-using Cooks.Service.Business.Validators.Models;
 using Foods.Service.Repository.Cooks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,215 +16,215 @@ namespace Foods.Service.Api.Controllers
     [Authorize]
     public class CooksController : BaseController
     {
-        private readonly IMapper _mapper;
-        private readonly IRepository<Cook> _cookRepo;
-        private readonly IFoodBusinessRegistrationRepository<FoodBusinessRegistration> _foodBusRepo;
-        private readonly IEntityValidator<CookDto> _cookValidator;
-        private readonly IEntityValidator<FoodBusinessRegistrationValidatorModel> _foodBusValidator;
-        private readonly ILocationHelper _locationHelper;
+        //private readonly IMapper _mapper;
+        //private readonly IRepository<Cook> _cookRepo;
+        //private readonly IFoodBusinessRegistrationRepository<FoodBusinessRegistration> _foodBusRepo;
+        //private readonly IEntityValidator<CookDto> _cookValidator;
+        //private readonly IEntityValidator<FoodBusinessRegistrationValidatorModel> _foodBusValidator;
+        //private readonly ILocationHelper _locationHelper;
 
         public CooksController(
-            IMapper mapper,
-            IRepository<Cook> cookRepo,
-            IFoodBusinessRegistrationRepository<FoodBusinessRegistration> foodBusRepo,
-            IEntityValidator<CookDto> cookValidator,
-            IEntityValidator<FoodBusinessRegistrationValidatorModel> foodBusValidator,
-            ILocationHelper locationHelper
+            //IMapper mapper,
+            //IRepository<Cook> cookRepo,
+            //IFoodBusinessRegistrationRepository<FoodBusinessRegistration> foodBusRepo,
+            //IEntityValidator<CookDto> cookValidator,
+            //IEntityValidator<FoodBusinessRegistrationValidatorModel> foodBusValidator,
+            //ILocationHelper locationHelper
             )
             
         {
-            _mapper = mapper;
-            _cookRepo = cookRepo;
-            _foodBusRepo = foodBusRepo;
-            _cookValidator = cookValidator;
-            _foodBusValidator = foodBusValidator;
-            _locationHelper = locationHelper;
+            //_mapper = mapper;
+            //_cookRepo = cookRepo;
+            //_foodBusRepo = foodBusRepo;
+            //_cookValidator = cookValidator;
+            //_foodBusValidator = foodBusValidator;
+            //_locationHelper = locationHelper;
         }
 
-        [HttpPost]
-        [Route("Registrations")]
-        public async Task<IActionResult> RegisterCook([FromBody]FoodBusinessRegistrationDto foodBusinessRegistrationDto)
-        {
-            var cookId = JwtMetaData.CookId;
+        //[HttpPost]
+        //[Route("Registrations")]
+        //public async Task<IActionResult> RegisterCook([FromBody]FoodBusinessRegistrationDto foodBusinessRegistrationDto)
+        //{
+        //    var cookId = JwtMetaData.CookId;
 
-            async Task<FoodBusinessRegistrationDto> RegisterCook()
-            {
-                foodBusinessRegistrationDto.Id = null;
-                foodBusinessRegistrationDto.CookId = cookId;
+        //    async Task<FoodBusinessRegistrationDto> RegisterCook()
+        //    {
+        //        foodBusinessRegistrationDto.Id = null;
+        //        foodBusinessRegistrationDto.CookId = cookId;
 
-                var foodBusRegValidModel = new FoodBusinessRegistrationValidatorModel
-                {
-                    FoodBusinessRegistration = foodBusinessRegistrationDto
-                };
+        //        var foodBusRegValidModel = new FoodBusinessRegistrationValidatorModel
+        //        {
+        //            FoodBusinessRegistration = foodBusinessRegistrationDto
+        //        };
 
-                await _foodBusValidator.ValidateEntityAsync(foodBusRegValidModel, foodBusRegValidModel.RuleSet);
+        //        await _foodBusValidator.ValidateEntityAsync(foodBusRegValidModel, foodBusRegValidModel.RuleSet);
 
-                var foodBusinessReg = _mapper.Map<FoodBusinessRegistration>(foodBusinessRegistrationDto);
-                var savedFoodBusinessReg = await _foodBusRepo.Save(foodBusinessReg);
+        //        var foodBusinessReg = _mapper.Map<FoodBusinessRegistration>(foodBusinessRegistrationDto);
+        //        var savedFoodBusinessReg = await _foodBusRepo.Save(foodBusinessReg);
 
-                return _mapper.Map<FoodBusinessRegistrationDto>(savedFoodBusinessReg);
-            }
+        //        return _mapper.Map<FoodBusinessRegistrationDto>(savedFoodBusinessReg);
+        //    }
 
-            return await Execute(RegisterCook);
+        //    return await Execute(RegisterCook);
 
 
-        }
+        //}
 
-        [HttpPut]
-        [Route("Registrations/{foodRegistrationId}")]
-        public async Task<IActionResult> UpdateCookRegistration(string foodRegistrationId, [FromBody]FoodBusinessRegistrationDto foodBusinessRegDto)
-        {
-            var cookId = JwtMetaData.CookId;
+        //[HttpPut]
+        //[Route("Registrations/{foodRegistrationId}")]
+        //public async Task<IActionResult> UpdateCookRegistration(string foodRegistrationId, [FromBody]FoodBusinessRegistrationDto foodBusinessRegDto)
+        //{
+        //    var cookId = JwtMetaData.CookId;
 
-            async Task<FoodBusinessRegistrationDto> UpdateCookRegistration()
-            {
-                foodBusinessRegDto.Id = foodRegistrationId;
-                foodBusinessRegDto.CookId = cookId;
+        //    async Task<FoodBusinessRegistrationDto> UpdateCookRegistration()
+        //    {
+        //        foodBusinessRegDto.Id = foodRegistrationId;
+        //        foodBusinessRegDto.CookId = cookId;
 
-                var foodBusRegValidModel = new FoodBusinessRegistrationValidatorModel
-                {
-                    FoodBusinessRegistration = foodBusinessRegDto,
-                };
+        //        var foodBusRegValidModel = new FoodBusinessRegistrationValidatorModel
+        //        {
+        //            FoodBusinessRegistration = foodBusinessRegDto,
+        //        };
 
-                await _foodBusValidator.ValidateEntityAsync(foodBusRegValidModel, foodBusRegValidModel.RuleSet);
+        //        await _foodBusValidator.ValidateEntityAsync(foodBusRegValidModel, foodBusRegValidModel.RuleSet);
 
-                var foodBusinessReg = _mapper.Map<FoodBusinessRegistration>(foodBusinessRegDto);
-                return _mapper.Map<FoodBusinessRegistrationDto>(await _foodBusRepo.Save(foodBusinessReg));
-            }
+        //        var foodBusinessReg = _mapper.Map<FoodBusinessRegistration>(foodBusinessRegDto);
+        //        return _mapper.Map<FoodBusinessRegistrationDto>(await _foodBusRepo.Save(foodBusinessReg));
+        //    }
 
-            return await Execute(UpdateCookRegistration);
-        }
+        //    return await Execute(UpdateCookRegistration);
+        //}
 
-        [HttpGet]
-        [Route("Registrations/{foodRegistrationId}")]
-        public async Task<IActionResult> GetCookRegistration(string foodRegistrationId)
-        {
-            var cookId = JwtMetaData.CookId;
+        //[HttpGet]
+        //[Route("Registrations/{foodRegistrationId}")]
+        //public async Task<IActionResult> GetCookRegistration(string foodRegistrationId)
+        //{
+        //    var cookId = JwtMetaData.CookId;
 
-            async Task<FoodBusinessRegistrationDto> GetCookRegistration()
-            {
-                var foodBusReg = await _foodBusRepo.Get(foodRegistrationId);
+        //    async Task<FoodBusinessRegistrationDto> GetCookRegistration()
+        //    {
+        //        var foodBusReg = await _foodBusRepo.Get(foodRegistrationId);
 
-                if (foodBusReg == null || foodBusReg.CookId != cookId)
-                {
-                    return null;
-                }
+        //        if (foodBusReg == null || foodBusReg.CookId != cookId)
+        //        {
+        //            return null;
+        //        }
 
-                return _mapper.Map<FoodBusinessRegistrationDto>(foodBusReg);
-            }
+        //        return _mapper.Map<FoodBusinessRegistrationDto>(foodBusReg);
+        //    }
 
-            return await Execute(GetCookRegistration);
-        }
+        //    return await Execute(GetCookRegistration);
+        //}
 
-        [HttpPut]
-        [Route("")]
-        public async Task<IActionResult> Update([FromBody]CookDto cookDto)
-        {
-            var cookId = JwtMetaData.CookId;
-            async Task<CookDto> UpdateCook()
-            {
-                cookDto.Id = cookId;
+        //[HttpPut]
+        //[Route("")]
+        //public async Task<IActionResult> Update([FromBody]CookDto cookDto)
+        //{
+        //    var cookId = JwtMetaData.CookId;
+        //    async Task<CookDto> UpdateCook()
+        //    {
+        //        cookDto.Id = cookId;
 
-                await _cookValidator.ValidateEntityAsync(cookDto, RuleSets.Cooks.ToString());
+        //        await _cookValidator.ValidateEntityAsync(cookDto, RuleSets.Cooks.ToString());
 
-                var cook = _mapper.Map<Cook>(cookDto);
+        //        var cook = _mapper.Map<Cook>(cookDto);
 
-                await _locationHelper.SetPostcodeLocation(cook.Address, cookDto.Id);
+        //        await _locationHelper.SetPostcodeLocation(cook.Address, cookDto.Id);
 
-                var savedCook = _mapper.Map<CookDto>(await _cookRepo.Save(cook));
+        //        var savedCook = _mapper.Map<CookDto>(await _cookRepo.Save(cook));
 
-                if (savedCook != null)
-                {
-                    var foodBusReg = await _foodBusRepo.GetByCookId(cookId);
-                    savedCook.FoodBusinessRegistrationId = foodBusReg?.Id;
-                }
+        //        if (savedCook != null)
+        //        {
+        //            var foodBusReg = await _foodBusRepo.GetByCookId(cookId);
+        //            savedCook.FoodBusinessRegistrationId = foodBusReg?.Id;
+        //        }
 
-                return savedCook;
-            }
+        //        return savedCook;
+        //    }
 
-            return await Execute(UpdateCook);
-        }
+        //    return await Execute(UpdateCook);
+        //}
 
-        [HttpGet]
-        [Route("")]
-        public async Task<IActionResult> Get()
-        {
-            var cookId = JwtMetaData.CookId;
+        //[HttpGet]
+        //[Route("")]
+        //public async Task<IActionResult> Get()
+        //{
+        //    var cookId = JwtMetaData.CookId;
 
-            async Task<CookDto> GetCook()
-            {
-                var cook = await _cookRepo.Get(cookId);
+        //    async Task<CookDto> GetCook()
+        //    {
+        //        var cook = await _cookRepo.Get(cookId);
 
-                var cookDto = _mapper.Map<CookDto>(cook);
+        //        var cookDto = _mapper.Map<CookDto>(cook);
 
-                if (cookDto != null)
-                {
-                    var foodBusReg = await _foodBusRepo.GetByCookId(cookId);
-                    cookDto.FoodBusinessRegistrationId = foodBusReg?.Id;
-                }
+        //        if (cookDto != null)
+        //        {
+        //            var foodBusReg = await _foodBusRepo.GetByCookId(cookId);
+        //            cookDto.FoodBusinessRegistrationId = foodBusReg?.Id;
+        //        }
 
-                return cookDto;
-            }
+        //        return cookDto;
+        //    }
 
-            return await Execute(GetCook);
-        }
+        //    return await Execute(GetCook);
+        //}
 
-        [HttpGet]
-        [Route("Nearby")]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetNearbyCooks(string postCode, double? searchRadiusInMiles)
-        {
-            async Task<IEnumerable<dynamic>> GetCook()
-            {
-                if (searchRadiusInMiles == null || searchRadiusInMiles < 0)
-                {
-                    searchRadiusInMiles = 2;
-                }
+        //[HttpGet]
+        //[Route("Nearby")]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> GetNearbyCooks(string postCode, double? searchRadiusInMiles)
+        //{
+        //    async Task<IEnumerable<dynamic>> GetCook()
+        //    {
+        //        if (searchRadiusInMiles == null || searchRadiusInMiles < 0)
+        //        {
+        //            searchRadiusInMiles = 2;
+        //        }
 
-                var location = await _locationHelper.GetPostcodeLocation(postCode);
+        //        var location = await _locationHelper.GetPostcodeLocation(postCode);
 
-                var coords = GetCoords(location.Coordinates.ToList());
+        //        var coords = GetCoords(location.Coordinates.ToList());
 
-                var nearbyCooks = await _locationHelper.GetNearbyCooks(coords.longitude, coords.latitude, (double)searchRadiusInMiles);
+        //        var nearbyCooks = await _locationHelper.GetNearbyCooks(coords.longitude, coords.latitude, (double)searchRadiusInMiles);
 
-                var cooks = _mapper.Map<IEnumerable<CookDto>>(nearbyCooks);
+        //        var cooks = _mapper.Map<IEnumerable<CookDto>>(nearbyCooks);
 
-                return cooks.Select(x => new
-                {
-                    x.Id,
-                    x.DisplayName,
-                    x.Categories
-                });
+        //        return cooks.Select(x => new
+        //        {
+        //            x.Id,
+        //            x.DisplayName,
+        //            x.Categories
+        //        });
 
-            }
+        //    }
 
-            (double longitude, double latitude) GetCoords(IReadOnlyList<double> coords)
-            {
-                return (longitude: coords[0], latitude: coords[1]);
-            }
+        //    (double longitude, double latitude) GetCoords(IReadOnlyList<double> coords)
+        //    {
+        //        return (longitude: coords[0], latitude: coords[1]);
+        //    }
 
-            return await Execute(GetCook);
-        }
+        //    return await Execute(GetCook);
+        //}
 
-        [HttpDelete]
-        [Route("")]
-        public async Task<IActionResult> Delete()
-        {
-            var cookId = JwtMetaData.CookId;
+        //[HttpDelete]
+        //[Route("")]
+        //public async Task<IActionResult> Delete()
+        //{
+        //    var cookId = JwtMetaData.CookId;
 
-            async Task DeleteCook()
-            {
-                var foodBusReg = await _foodBusRepo.GetByCookId(cookId);
+        //    async Task DeleteCook()
+        //    {
+        //        var foodBusReg = await _foodBusRepo.GetByCookId(cookId);
 
-                if (foodBusReg != null)
-                {
-                    await _foodBusRepo.Delete(foodBusReg.Id);
-                }
+        //        if (foodBusReg != null)
+        //        {
+        //            await _foodBusRepo.Delete(foodBusReg.Id);
+        //        }
 
-                await _cookRepo.Delete(cookId);
-            }
+        //        await _cookRepo.Delete(cookId);
+        //    }
 
-            return await Execute(DeleteCook);
-        }
+        //    return await Execute(DeleteCook);
+        //}
     }
 }
